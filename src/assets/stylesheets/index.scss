@@ -1,0 +1,565 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,400..800;1,400..800&family=Aleo:ital,wght@0,400..800;1,400..800&display=swap');
+
+$background: #fffbf5;
+$smooth-dark: rgb(48, 48, 48);
+$secondary: rgb(83, 83, 83);
+
+html,
+body {
+    font-family: 'Rubik', sans-serif;
+    background-color: $background;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    min-height: 100vh;
+}
+
+.bg-background {
+    background-color: $background;
+}
+
+
+@media (max-width: 991px) {
+    .Home .Header .hero {
+
+        h1,
+        p {
+            max-width: 80%;
+            margin-left: 10%;
+        }
+
+        .avatar {
+            max-width: 80% !important;
+            margin-left: 10% !important;
+        }
+    }
+}
+
+.Home {
+    .Header {
+        background-color: #ffffff;
+        color: black;
+        min-height: 100vh;
+        height: 100%;
+
+        .hero {
+            height: 100vh !important;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+
+            .avatar {
+                position: relative;
+                display: inline-block;
+                width: 4rem;
+                height: 4rem;
+                border-radius: 50%;
+                overflow: hidden;
+                margin: 0 auto;
+
+
+                .profile-picture {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    cursor: pointer;
+                }
+
+                .profile-picture-hover {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    opacity: 0;
+                    transition: opacity 0.3s;
+                    cursor: pointer;
+                }
+
+                &:hover .profile-picture-hover {
+                    opacity: 1;
+                }
+            }
+
+            .tooltipHint {
+                position: relative;
+                display: inline-block;
+                margin-left: 0.5rem;
+                cursor: help;
+
+                .tooltiptext {
+                    visibility: hidden;
+                    background-color: black;
+                    width: auto;
+                    font-size: 0.75rem;
+                    color: #fff;
+                    text-align: center;
+                    border-radius: 6px;
+                    padding: 5px 0;
+                    position: absolute;
+                    z-index: 1;
+                    bottom: 125%;
+                    left: 50%;
+                    margin-left: -60px;
+                    opacity: 0;
+                    transition: opacity 0.3s;
+                }
+
+                &:hover .tooltiptext {
+                    visibility: visible;
+                    opacity: 1;
+                }
+            }
+
+            .presentation {
+                // Pour les écrans en lg et plus, marginTop
+
+
+                font-family: 'Aleo',
+                    serif;
+                max-width: 80%;
+                margin-left: 10%;
+
+                .description {
+                    font-size: 1rem;
+                    color: $smooth-dark;
+                }
+
+                .cta-section {
+                    margin-top: 1rem;
+                }
+            }
+
+        }
+
+    }
+}
+
+@media (min-width: 992px) {
+    .Home.Header.hero.presentation {
+        margin-top: 4.5rem;
+    }
+}
+
+@media (max-width: 991px) {
+    .Home.Header.hero.presentation {
+        margin-top: 1rem;
+    }
+}
+
+.timeline {
+
+    .timeline-item {
+        display: flex;
+        margin-top: 2rem;
+
+        .timeline-image {
+            display: block;
+            color: white;
+            background-color: white;
+            border-radius: 50%;
+            width: 3rem !important;
+            height: 3rem !important;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+
+        }
+
+        // Même chose pour l'icone que pour l'image, mais avec un rond noir en fond
+
+
+        .timeline-icon {
+            display: block;
+            color: white;
+            border-radius: 50%;
+            width: 3rem !important;
+            height: 3rem !important;
+            min-width: 3rem;
+            min-height: 3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+            background-color: black;
+
+            // Faire en sorte que le rond ne soit pas écrasé
+
+
+            i {
+                font-size: 1.5rem;
+            }
+
+
+        }
+
+        .timeline-content {
+
+
+
+            h3 {
+                font-size: 1.25rem;
+                color: $smooth-dark;
+                margin-bottom: 0;
+            }
+
+            .date {
+                font-size: 0.875rem;
+                color: $smooth-dark;
+            }
+
+            p {
+                font-size: 1rem;
+                color: $smooth-dark;
+                margin-top: .5rem;
+            }
+        }
+    }
+
+}
+
+
+.diplomas {
+
+    // Faire que les children ne prennent pas 100% de la largeur
+
+    display: flex;
+    flex-direction: row;
+
+    // Retour à la ligne si pas assez de place
+    flex-wrap: wrap;
+
+    margin-top: 2rem;
+
+    .diploma-badge {
+        display: flex;
+        align-items: center;
+        margin-top: 1rem;
+        border: 1px solid black;
+        border-radius: 1rem;
+        padding: 0.25rem 0;
+        font-size: .875rem;
+
+        position: relative;
+        display: inline-block;
+        cursor: help;
+
+        margin-right: 1rem;
+
+
+        .content {
+            display: flex;
+            align-items: center;
+            margin-left: .5rem;
+            margin-right: .75rem;
+
+            .iconTooltip {
+                position: relative;
+                top: -0.25rem;
+                margin-left: 0.325rem;
+                margin-right: 0.325rem;
+                font-size: .75rem;
+                // faire tourner en boucle
+                animation: spin 2s linear infinite;
+            }
+
+            img {
+                width: 1.75rem;
+                height: 1.75rem;
+                margin-right: 0.5rem;
+                border-radius: .75rem;
+            }
+        }
+
+        .tooltiptext {
+            visibility: hidden;
+            background-color: black;
+            width: auto;
+            font-size: 0.75rem;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px 5px;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            left: 50%;
+            margin-left: -60px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        &:hover {
+
+            background-color: black;
+            color: white;
+            transition: background-color 0.3s, color 0.3s;
+
+            .tooltiptext {
+                visibility: visible;
+                opacity: 1;
+            }
+
+            .tooltip-info {
+                visibility: visible;
+                opacity: 1;
+            }
+        }
+
+    }
+
+}
+
+
+// Animation
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.btn {
+    padding: 0.75rem 1.25rem;
+    border-radius: 2rem;
+    font-size: 1rem;
+    margin-right: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+
+    &.btn-black {
+        background-color: black;
+        color: white;
+        border: 1px solid black;
+        transition: box-shadow 0.3s, transform 0.3s;
+        box-shadow: 0px 5px 0px 0px rgba(0, 0, 0, 0.1);
+
+        &:hover {
+            transform: translateY(-5px);
+            box-shadow: 0px 10px 0px 0px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s, transform 0.3s;
+        }
+
+        &:focus {
+            box-shadow: none;
+            transform: none;
+            transition: box-shadow 0.3s, transform 0.3s;
+        }
+
+    }
+
+    &.btn-outline-black {
+        background-color: transparent;
+        color: black;
+        border: 1px solid black;
+    }
+
+    &:hover {
+        background-color: black !important;
+        color: white !important;
+    }
+}
+
+/* <span className="soon">Bientôt</span> */
+
+.soon {
+    font-size: 0.75rem;
+    color: red;
+    border: 1px solid red;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.5rem;
+    font-weight: bold;
+    margin-left: 0.5rem;
+}
+
+.portfolio {
+    margin-top: 3rem;
+
+
+    .portfolio-item {
+
+
+        .anchor {
+            // Placées au centre vertical du parent, le #previous est à gauche et le #next à droite
+
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            display: block;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.5);
+            height: 3rem;
+            width: 3rem;
+            border-style: solid;
+            border-width: 0.5rem 0.5rem 0.5rem 0;
+
+
+        }
+
+        border-radius: 0.5rem;
+        overflow: hidden;
+        position: relative;
+        box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.1);
+
+        img {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: 0.5rem;
+        }
+
+        .portfolio-item-content {
+            padding: 1rem;
+            border-radius: 0.5rem;
+            background-color: rgba(0, 0, 0, 0.5); // semi-transparent black background
+            color: white;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 100%;
+
+            h3 {
+                margin-top: 0;
+            }
+
+            .date {
+                display: block;
+                margin-top: 1rem;
+                font-weight: bold;
+            }
+        }
+    }
+}
+
+@media (min-width: 992px) {
+    .portfolio .portfolio-item .portfolio-item-content {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 25rem;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        padding: 1rem; 
+        background-color: rgba(0, 0, 0, 0.5); // semi-transparent black background
+    }
+}
+
+@media (min-width: 992px) {
+
+
+    .experience {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+
+
+.experience {
+
+    margin-top: 3rem;
+    min-height: 100vh;
+
+    .description {
+        display: flex;
+        flex-direction: column;
+
+        .date {
+            color: $secondary;
+            margin-bottom: 1rem;
+        }
+
+    }
+
+    .skills {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin: 1rem 0;
+
+        .skill-badge {
+            display: flex;
+            align-items: center;
+            margin-top: 1rem;
+            border: 1px solid black;
+            border-radius: 1rem;
+            padding: 0.25rem 0;
+            font-size: .875rem;
+
+            position: relative;
+            display: inline-block;
+            cursor: help;
+
+            margin-right: 1rem;
+
+            .content {
+                display: flex;
+                align-items: center;
+                margin-left: .5rem;
+                margin-right: .75rem;
+
+                img {
+                    width: 1.75rem;
+                    height: 1.75rem;
+                    margin-right: 0.5rem;
+                    border-radius: .75rem;
+                }
+            }
+
+            .tooltiptext {
+                visibility: hidden;
+                background-color: black;
+                width: auto;
+                font-size: 0.75rem;
+                color: #fff;
+                text-align: center;
+                border-radius: 6px;
+                padding: 5px 5px;
+                position: absolute;
+                z-index: 1;
+                bottom: 125%;
+                left: 50%;
+                margin-left: -60px;
+                opacity: 0;
+                transition: opacity 0.3s;
+            }
+
+            &:hover {
+
+                background-color: black;
+                color: white;
+                transition: background-color 0.3s, color 0.3s;
+
+                .tooltiptext {
+                    visibility: visible;
+                    opacity: 1;
+                }
+
+                .tooltip-info {
+                    visibility: visible;
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}
+
+.ml5 {
+    margin-left: 5%;
+}
+
+@media (max-width: 991px) {
+    .ml5 {
+        margin-left: 0;
+    }
+}
