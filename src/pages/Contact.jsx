@@ -38,7 +38,7 @@ class Contact extends React.Component {
                                     <h1>Et si nous prenions contact {new Date().getHours() < 18 ? "aujourd'hui" : "ce soir"} ? {new Date().getHours() >= 18 ? <div className="tooltipHint">😴<span className="tooltiptext">Je ne répondrai peut-être pas dans la soirée</span></div> : null}</h1>
 
                                     <p className="mt-3 d-none d-lg-flex">
-                                        Il arrive que mon téléphone soit en mode "ne pas déranger" pour me concentrer sur mes projets, mais je réponds toujours aux messages dans les plus brefs délais.
+                                        Il arrive que mon téléphone soit en mode "ne pas déranger" pour me concentrer sur mes projets, mais je réponds toujours aux messages dans les plus brefs délais.<br/>
                                     </p>
 
                                 </div>
@@ -49,13 +49,14 @@ class Contact extends React.Component {
                                             <h2>Choisissez la catégorie qui vous intéresse</h2>
 
                                             <div className="cta-section mb-3">
-                                                <button className="btn btn-black mb-2" onClick={() => this.setState({ reason: "scolar" })} disabled={new Date().getTime() < new Date("2024-08-15T00:00:00Z").getTime()}>Accompagnement scolaire</button>
+                                                {/*<button className="btn btn-black mb-2" onClick={() => this.setState({ reason: "scolar" })} disabled={new Date().getTime() < new Date("2024-08-15T00:00:00Z").getTime()}>Accompagnement scolaire</button>*/}
+                                                <Link to="https://www.linkedin.com/in/ewen-rodrigues-de-oliveira-500736267/" target="_blank" className="btn btn-black mb-2">Mon LinkedIn</Link>
                                                 <button className="btn btn-black mb-2" onClick={() => this.setState({ reason: "website" })}>Demande de site web</button>
                                                 <button className="btn btn-black" onClick={() => this.setState({ reason: "other" })}>Autre</button>
                                             </div>
 
                                             <span className="text-danger">
-                                                Les cours particuliers de mathématiques seront disponibles à la réservation à partir du 15 août 2024.
+                                                
                                             </span>
                                         </div>
                                         : this.state.reason === "website" ?
@@ -76,7 +77,7 @@ class Contact extends React.Component {
                                                 </div>
 
                                             </div>
-                                            : this.state.reason === "scolar" ?
+                                            /*: this.state.reason === "scolar" ?
 
                                                 <div className="presentation align-items-top">
                                                     <h2>Vous souhaitez avoir un accompagnement en mathématiques pour les lycéens ?</h2>
@@ -99,7 +100,7 @@ class Contact extends React.Component {
                                                         <button className="btn btn-outline-black mb-2" onClick={() => this.setState({ reason: null })}>Retour</button>
                                                     </div>
 
-                                                </div>
+                                                </div>*/
                                                 : this.state.reason === "other" ?
                                                     <div className="presentation align-items-top">
                                                         <h2>Vous avez une autre demande ?</h2>
