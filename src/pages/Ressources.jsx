@@ -112,6 +112,11 @@ export default function Ressources() {
     const contributeUrl =
         'https://github.com/ewenrdo/dl-mathinfo-vault#contribuer';
 
+    const today = new Date();
+    const isBirthday =
+        today.getMonth() === 8 && today.getDate() === 15;
+    const birthdayAge = today.getFullYear() - 2006;
+
     // Chargement des fichiers JSON
 
     useEffect(() => {
@@ -560,6 +565,17 @@ export default function Ressources() {
                             {resourceMode === 'university'
                                 ? 'Ressources et archives'
                                 : 'Notes personnelles'}
+
+                            {isBirthday && (
+                                <span
+                                    className="birthday-cake"
+                                    role="img"
+                                    aria-label={`${birthdayAge} ans !`}
+                                    title={`${birthdayAge} ans !`}
+                                >
+                                    🎂
+                                </span>
+                            )}
                         </h1>
 
                         <p>
