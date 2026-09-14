@@ -114,7 +114,7 @@ export default function Ressources() {
 
     const today = new Date();
     const isBirthday =
-        today.getMonth() === 8 && today.getDate() === 15;
+        today.getMonth() === 8 && today.getDate() === 14;
     const birthdayAge = today.getFullYear() - 2006;
 
     // Chargement des fichiers JSON
