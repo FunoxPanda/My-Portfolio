@@ -1078,7 +1078,16 @@
                             {
                                 "name": "Avancement en TD",
                                 "slug": "cd5-td-notes",
-                                "children": []
+                                "children": [
+                                    {
+                                        "name": "td1.pdf",
+                                        "path": "/resources/notes/CD5/TD1.pdf",
+                                        "credits": "Ewen Rodrigues de Oliveira.",
+                                        "title": "Notes de TD 1",
+                                        "date": "2026-09-15",
+                                        "slug": "cd5-td-notes-td1"
+                                    }
+                                ]
                             },
                             {
                                 "name": "chap0.pdf",

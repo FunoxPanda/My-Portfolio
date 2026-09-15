@@ -9,7 +9,7 @@ Ici sont listées les questions que je me pose sur le cours ou les exercices, ai
 
 ## Intégration et probabilités (PR5)
 
-_Rien pour le moment_
+- Exercice 6 question 1 : voir le problème dans mon raisonnement sur 1/n(n-k)
 
 ## Calcul différentiel (CD5)
 
